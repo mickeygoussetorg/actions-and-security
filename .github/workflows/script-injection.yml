@@ -1,0 +1,22 @@
+name: Script Injection
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+
+  job1:
+    
+    runs-on: ubuntu-latest
+
+    
+    steps:
+      # Runs a single command using the runners shell
+      - name: Show Script Injection
+        run: |
+          test="${github.event.outputs.name"
+          echo "This should be fun"
+          echo $test
+
+      
