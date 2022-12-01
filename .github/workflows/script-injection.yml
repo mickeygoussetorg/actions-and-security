@@ -2,6 +2,11 @@ name: Script Injection
 
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        type: text
+        default: Elvis
+  
 
 
 jobs:
@@ -15,7 +20,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Show Script Injection
         run: |
-          test="${github.event.outputs.name"
+          test="${github.event.outputs.name}"
           echo "This should be fun"
           echo $test
 
