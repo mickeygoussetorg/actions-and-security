@@ -23,5 +23,14 @@ jobs:
           test="${{github.event.inputs.name}}"
           echo "This should be fun"
           echo $test
+          
+      - name: Stop Script Injection
+        env:
+          TEST: ${{github.event.inputs.name}}
+        run: |
+          echo "This should be fun"
+          echo $TEST
+          
+      
 
       
